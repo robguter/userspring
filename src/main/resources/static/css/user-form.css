@@ -1,0 +1,58 @@
+body{
+    background: url(../img/background.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.main-section{
+    margin:0 auto;
+    margin-top:5%;
+}
+.card{
+	opacity: .95;
+}
+.card-body{
+    background-color: #d1d3d6;
+    box-shadow: 0px 0px 3px #848484;
+}
+
+label{
+	font-weight: bold;
+}
+.nav-tabs .nav-item a {
+	transition: 		all .75s;
+	-o-transition: 		all .75s;
+	-moz-transition:	all .75s;
+	-webkit-transition: all .75s;
+}
+.nav-tabs .nav-item:nth-child(1) {
+	margin-right: 3px;
+}
+.nav-tabs .nav-item a:not(.active){
+	background-color: #d4d5d6;
+}
+.nav-tabs .nav-item a.active{
+	box-shadow: 0px 0px 1px 2px rgba(0,0,0,.25) inset,
+				0px 0px 1px 2px #FFF;
+}
+.nav-tabs .nav-item a:not(.active):hover {
+	box-shadow: 0px 0px 1px 1px #FFF inset,
+				0px 0px 12px 4px rgba(0,0,0,.5) inset;
+	font-weight: bold;
+}
+.nav-tabs{
+	border:			0px solid #000;
+}
+.nav-tabs .nav-item {
+	border:			0px solid #000;
+}
+.nav-link {
+	min-width: 		100px;
+	text-align: 	center;
+}
+.nav-tabs .nav-item, .nav-tabs .nav-item .nav-link {
+	border:			0px solid #F00;
+	border-radius: 	5px 5px 0px 0px;
+}
+.nav-tabs .nav-item:nth-child(2) .nav-link {
+	border-radius: 	5px 5px 4px 0px;
+}
