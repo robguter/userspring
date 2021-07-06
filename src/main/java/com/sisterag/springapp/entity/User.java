@@ -32,16 +32,16 @@ public class User implements Serializable {
 	private Long id;
 	
 	@Column
-	private String frist_name;
+	private String firstname;
 
 	@Column
-	private String last_name;
+	private String lastname;
 
 	@Column
 	private String email;
 
 	@Column
-	private String user_name;
+	private String username;
 
 	@Column
 	private String password;
@@ -63,20 +63,20 @@ public class User implements Serializable {
 		this.id = id;
 	}
 
-	public String getFrist_name() {
-		return frist_name;
+	public String getFirstname() {
+		return firstname;
 	}
 
-	public void setFrist_name(String frist_name) {
-		this.frist_name = frist_name;
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
 	}
 
-	public String getLast_name() {
-		return last_name;
+	public String getLastname() {
+		return lastname;
 	}
 
-	public void setLast_name(String last_name) {
-		this.last_name = last_name;
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
 	}
 
 	public String getEmail() {
@@ -87,12 +87,12 @@ public class User implements Serializable {
 		this.email = email;
 	}
 
-	public String getUser_name() {
-		return user_name;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUser_name(String user_name) {
-		this.user_name = user_name;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {
@@ -121,14 +121,14 @@ public class User implements Serializable {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", frist_name=" + frist_name + ", last_name=" + last_name + ", email=" + email
-				+ ", user_name=" + user_name + ", password=" + password + ", confirmpassword=" + confirmpassword
+		return "User [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", email=" + email
+				+ ", username=" + username + ", password=" + password + ", confirmpassword=" + confirmpassword
 				+ ", roles=" + roles + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(confirmpassword, email, frist_name, id, last_name, password, roles, user_name);
+		return Objects.hash(confirmpassword, email, firstname, id, lastname, password, roles, username);
 	}
 
 	@Override
@@ -141,9 +141,9 @@ public class User implements Serializable {
 			return false;
 		User other = (User) obj;
 		return Objects.equals(confirmpassword, other.confirmpassword) && Objects.equals(email, other.email)
-				&& Objects.equals(frist_name, other.frist_name) && Objects.equals(id, other.id)
-				&& Objects.equals(last_name, other.last_name) && Objects.equals(password, other.password)
-				&& Objects.equals(roles, other.roles) && Objects.equals(user_name, other.user_name);
+				&& Objects.equals(firstname, other.firstname) && Objects.equals(id, other.id)
+				&& Objects.equals(lastname, other.lastname) && Objects.equals(password, other.password)
+				&& Objects.equals(roles, other.roles) && Objects.equals(username, other.username);
 	}
 	
     

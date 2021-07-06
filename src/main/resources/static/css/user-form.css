@@ -14,7 +14,6 @@ body{
     background-color: #d1d3d6;
     box-shadow: 0px 0px 3px #848484;
 }
-
 label{
 	font-weight: bold;
 }
@@ -55,4 +54,10 @@ label{
 }
 .nav-tabs .nav-item:nth-child(2) .nav-link {
 	border-radius: 	5px 5px 4px 0px;
+}
+#list, #form {
+	transition: 		all .75s;
+	-o-transition: 		all .75s;
+	-moz-transition:	all .75s;
+	-webkit-transition: all .75s;
 }
