@@ -15,8 +15,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Transient;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.GenericGenerator;
+
+import com.sun.istack.NotNull;
 
 @Entity
 public class User implements Serializable {
@@ -32,21 +37,33 @@ public class User implements Serializable {
 	private Long id;
 	
 	@Column
+	@NotEmpty(message = "Por favor, agrega tu nombre")
+	@Size(max = 30, min = 3, message = "Tamaño inválido")
 	private String firstname;
 
 	@Column
+	@NotEmpty(message = "Por favor, agrega tu Apellido")
+	@Size(max = 30, min = 3, message = "Tamaño inválido")
 	private String lastname;
 
 	@Column
+	@NotEmpty(message = "Por favor, agrega tu Email")
+	@Email
 	private String email;
 
 	@Column
+	@NotEmpty(message = "Por favor, agrega tu nombre de usuario")
+	@Size(max = 15, min = 5, message = "Tamaño inválido")
 	private String username;
 
 	@Column
+	@NotEmpty(message = "Por favor, agrega tu clave")
+	@Size(max = 10, min = 5, message = "Tamaño inválido")
 	private String password;
 
     @Transient
+	@NotEmpty(message = "Por favor, confirma tu clave")
+	@Size(max = 10, min = 5, message = "Tamaño inválido")
 	private String confirmpassword;
 
     @ManyToMany
