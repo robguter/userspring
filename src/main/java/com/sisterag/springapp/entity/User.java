@@ -48,6 +48,7 @@ public class User implements Serializable {
 
 	@Column
 	@NotEmpty(message = "Por favor, agrega tu Email")
+	@Size(max = 255, min = 5, message = "Tamaño inválido")
 	@Email
 	private String email;
 
@@ -57,12 +58,10 @@ public class User implements Serializable {
 	private String username;
 
 	@Column
-	@NotEmpty(message = "Por favor, agrega tu clave")
 	@Size(max = 10, min = 5, message = "Tamaño inválido")
 	private String password;
 
     @Transient
-	@NotEmpty(message = "Por favor, confirma tu clave")
 	@Size(max = 10, min = 5, message = "Tamaño inválido")
 	private String confirmpassword;
 
