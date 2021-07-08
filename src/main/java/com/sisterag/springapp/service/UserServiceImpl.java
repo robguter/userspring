@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.sisterag.springapp.entity.User;
 import com.sisterag.springapp.repository.UserRepository;
+
+import ch.qos.logback.core.joran.conditional.ThenOrElseActionBase;
 @Service
 public class UserServiceImpl implements UserService{
 	@Autowired
@@ -44,4 +46,23 @@ public class UserServiceImpl implements UserService{
 		return user;
 	}
 
+	@Override
+	public User getUserById(Long id) throws Exception {
+		return repository.findById(id).orElseThrow(() -> new Exception("El usuario no se encontró") );
+	}
+
+	@Override
+	public User updateUser(User fromUser) throws Exception {
+		User toUser = getUserById(fromUser.getId());
+		mapUser(fromUser, toUser);
+		return repository.save(toUser);
+	}
+	protected void mapUser(User from, User to) {
+		to.setUsername(from.getUsername());
+		to.setFirstname(from.getFirstname());
+		to.setLastname(from.getLastname());
+		to.setEmail(from.getEmail());
+		to.setRoles(from.getRoles());
+		to.setPassword(from.getPassword());
+	}
 }
