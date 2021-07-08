@@ -11,5 +11,7 @@ public interface UserService {
 	public User getUserById(Long id) throws Exception;
 
 	public User updateUser(User user) throws Exception;
+
+	public User deleteUser(Long id) throws Exception;
 	
 }

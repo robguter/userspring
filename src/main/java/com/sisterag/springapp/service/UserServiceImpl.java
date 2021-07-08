@@ -65,4 +65,12 @@ public class UserServiceImpl implements UserService{
 		to.setRoles(from.getRoles());
 		to.setPassword(from.getPassword());
 	}
+
+	@Override
+	public User deleteUser(Long id) throws Exception {
+		User user = getUserById(id);
+		repository.delete(user);
+		return null;
+	}
+
 }

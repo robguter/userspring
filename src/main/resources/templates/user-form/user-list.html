@@ -18,10 +18,35 @@
 			<td th:text="${user.username}"></td>
 			<td th:text="${user.email}"></td>
 			<td>
-				<a href="#" th:href="@{'/editUser/'+ ${user.id}}"><i class="fas fa-edit"></i></a>
-				| <a href="#" th:onClick="'javascript:confirmDelete(\''+${user.id} +'\');'"><i class="fas fa-user-times"></i></a>
+				  <a href="#" id="btnEdtr" ><i class="fas fa-edit"></i></a>
+				| <a href="#" id="btnCnfr" ><i class="fas fa-user-times"></i></a>
 			</td>
 		</tr>
 		</tbody>
 	</table>
+	<div class="alert alert-danger text-center" th:if="${listErrorMessage}" th:text="${listErrorMessage}">Mensaje de Error</div>
 </div>
+<script>
+	var iId = 0;
+	function confirmDelete() {
+		$('#deleteModal').modal('show');
+	}
+	function deleteUser(id) {
+		window.location = "deleteUser/"+id;
+	}
+	$(document).ready(function() {
+
+		$("#btnDlt").on("click", function() {
+			 deleteUser(iId);
+		});
+		$("a#btnCnfr").on("click", function() {
+			iId = $(this).parent("td").parent("tr").children("td:nth-child(1)").html();
+			confirmDelete(iId);
+		});
+		$("a#btnEdtr").on("click", function() {
+			iId = $(this).parent("td").parent("tr").children("td:nth-child(1)").html();
+			window.location = "editUser/"+iId;
+		});
+		
+	});
+</script>

@@ -87,10 +87,11 @@ div.card-body {
 	border-top: 0px solid rgba(255,255,255,.25);
 }
 div.card div.card-header {
+	background-color: rgba(80,160,160,.75);
 	border-radius: 	18px 0px 0px 0px;
 	border: 1px solid rgba(255,255,255,.25);
 	box-shadow: 0px 0px 1px 1px rgba(255,255,255,.25),
-				0px 0px 12px 4px rgba(0,70,100,.5) inset;
+				0px 0px 12px 4px rgba(0,100,100,.5) inset;
 	font-weight: bold;
 	border-bottom: 0px solid rgba(255,255,255,.25);
 }
@@ -101,7 +102,29 @@ div.card div.card-header h4 {
 	font-weight: bold;
 }
 div.table-responsive table.table th {
-	background-color: rgba(120,160,190,.75);
+	background-color: rgba(80,140,140,.5);
 	color:			 rgba(0,0,0,.75);
 	text-transform: uppercase;
+	box-shadow: 0px 0px 1px 1px rgba(255,255,255,.5),
+				1px 1px 2px 1px rgba(0,100,100,.5);
+	text-align: center;
+	border: 0px solid rgba(255,255,255,.15);
+}
+div.table-responsive table.table tr td:last-child {
+	text-align: center;
+}
+a i[class^="fas"] {
+	background-color: rgba(255,160,160,.75);
+	color:			 rgba(0,255,0,.75);
+}
+a, a:link, a:visited {
+	color: rgba(0,100,150,.5);
+	transition: 		all .75s;
+	-o-transition: 		all .75s;
+	-moz-transition:	all .75s;
+	-webkit-transition: all .75s;
+}
+a:hover, a:link:hover, a:visited:hover {
+	color: rgba(100,200,200,.95);
+	font-weight: bold;
 }
